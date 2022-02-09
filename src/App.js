@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import StickyFooter from './componets/Footer';
+import NavigationBar from './componets/NavigationBar';
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', }} >
+      <CssBaseline />
+      <NavigationBar />
+      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+        <Typography variant="h2" component="h1" gutterBottom>
+          Sticky footer
+        </Typography>
+      </Container>
+      <StickyFooter/>
+    </Box>
   );
 }
-
-export default App;
